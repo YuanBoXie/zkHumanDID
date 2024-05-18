@@ -3,6 +3,7 @@ Eth Beijing 2024 Entry - zkHumanDID - Creating on-chain DID digital identities f
 
 # 交互流程
 User side：用户 -> 链接钱包 (wagmi) -> 上传图片 (Flask) -> 触发交易 (Metamask)
+
 Server side: 保存图片 -> 检测到用户触发合约押金交易 -> 离线ZKML校验 -> 触发SBT合约颁发zkHumanDID
 
 1. 触发领取 SBT 流程：
