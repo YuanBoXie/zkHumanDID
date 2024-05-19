@@ -25,6 +25,11 @@ Server side: 保存图片 -> 检测到用户触发合约押金交易 -> 离线ZK
 5. 生成零知识证明（zkML）验证embedding计算结果
 6. 调用智能合约颁发SBT
 
+# 合约地址（部署在Scroll测试网上）
+1. Warmup合约，用于存储UUID 0x2cc703ce58f5e219f26ce493eec0f50622180097
+2. Halo2Verifier合约 0xB158384435Dd62E36B79e9b59fa1A7c53E6f024B
+3. ZkRealHumanSBT合约 0xB2EE145Ea0009B06A5957AB237EeB9879fAbb811
+
 # Interactive Process
 
 #### User Side:
@@ -59,4 +64,8 @@ Server side: 保存图片 -> 检测到用户触发合约押金交易 -> 离线ZK
 5. Generate zero-knowledge proof (zkML) to verify embedding calculation result
 6. Call smart contract to issue SBT
 
+## Contract Addresses (Deployed on Scroll Testnet)
+1. Warmup Contract, used to store UUID 0x2cc703ce58f5e219f26ce493eec0f50622180097
+2. Halo2Verifier Contract 0xB158384435Dd62E36B79e9b59fa1A7c53E6f024B
+3. ZkRealHumanSBT Contract 0xB2EE145Ea0009B06A5957AB237EeB9879fAbb811
 
