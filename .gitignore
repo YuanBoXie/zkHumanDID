@@ -37,3 +37,7 @@ yarn-error.log*
 next-env.d.ts
 
 */uploads/*
+
+# 暂时先不提交 utils 文件
+backend/utils.py
+backend/model-serve/*
