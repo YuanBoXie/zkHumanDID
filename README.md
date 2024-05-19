@@ -26,3 +26,47 @@ Server side: 保存图片 -> 检测到用户触发合约押金交易 -> 离线ZK
 5. 生成零知识证明（zkML）验证embedding计算结果
 6. 调用智能合约颁发SBT
 
+# 合约地址（部署在Scroll测试网上）
+1. Warmup合约，用于存储UUID 0x2cc703ce58f5e219f26ce493eec0f50622180097
+2. Halo2Verifier合约 0xB158384435Dd62E36B79e9b59fa1A7c53E6f024B
+3. ZkRealHumanSBT合约 0xB2EE145Ea0009B06A5957AB237EeB9879fAbb811
+
+# Interactive Process
+
+#### User Side:
+1. User -> Connect Wallet (wagmi)
+2. Upload Image (Flask)
+3. Trigger Transaction (Metamask)
+
+#### Server Side:
+1. Save Image
+2. Detect User Triggering Contract Deposit Transaction
+3. Offline ZKML Verification
+4. Trigger SBT Contract Issuance for zkHumanDID
+
+## Triggering the SBT Claim Process:
+1. Connect Wallet (wagmi)
+2. Upload Image (Flask server receives user-uploaded image)
+3. Trigger Transaction (deposit collateral and write verification data hash)
+
+## Offline ZKML Verification Process:
+1. Off-chain monitoring program detects a new claim transaction confirmation and triggers the offline ZKML verification process
+2. Offline ZKML verification program reads transaction data and calls the face recognition model for verification
+   - Compute embedding for the face model
+   - Search for similar embeddings in the vector database and perform threshold verification to determine if there are records with similarity below the threshold
+      - If yes: Verification fails, the face has been occupied, claim is denied
+      - If no: Verification succeeds, write zkML verification data hash, call contract to issue SBT
+
+## Offline ZKML Verification Workflow:
+1. Monitoring program detects new transaction confirmation
+2. Read transaction data and uploaded image
+3. Call face recognition model to compute embedding
+4. Search for similarity in the vector database
+5. Generate zero-knowledge proof (zkML) to verify embedding calculation result
+6. Call smart contract to issue SBT
+
+## Contract Addresses (Deployed on Scroll Testnet)
+1. Warmup Contract, used to store UUID 0x2cc703ce58f5e219f26ce493eec0f50622180097
+2. Halo2Verifier Contract 0xB158384435Dd62E36B79e9b59fa1A7c53E6f024B
+3. ZkRealHumanSBT Contract 0xB2EE145Ea0009B06A5957AB237EeB9879fAbb811
+
